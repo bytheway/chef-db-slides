@@ -1,3 +1,6 @@
+Title: Just Enough Chef
+Author: Ben Bytheway
+
 %css
 
 body {
@@ -40,6 +43,13 @@ body {
   #background-color: white;
 }
 
+.chef.hidden {
+  opacity: 0;
+}
+
+.chef.hidden.step:not(.active) {
+      opacity: 0;
+}
 
 .chef.step {
   width: 900px;
@@ -99,7 +109,7 @@ pre, code {
 <link href='http://fonts.googleapis.com/css?family=Monda:400,700' rel='stylesheet' type='text/css'>
 Just enough Chef to make your head hurt
 
-<img src="images/chef-logo.png" style="max-height: 300px; max-width=800px;">
+<img src="images/chef-logo.png" style="max-height: 300px; max-width:800px;">
 
 !SLIDE slide x=1200
 
@@ -124,9 +134,12 @@ Idempotent
 * Only things that need to change are changed
 * Kind of like:
 <% code do %>
-CREATE OR REPLACE PROCEDURE MyProcedure
-...
+CREATE OR REPLACE PROCEDURE ...
 <% end %>
+
+!SLIDE chef hidden x=0 y=1000 z=-1300 scale=2
+
+<img src="images/worked-in-dev.png" style="min-width: 600px;">
 
 !SLIDE chef x=0 y=-1000
 
@@ -234,7 +247,7 @@ end
 Directories
 
 <% code do %>
-  directory '/u01/app/oracle/product/10.2.0/db_1' do
+  directory '/u01/app/oracle/product/10.2.0/db1' do
     owner 'oracle'
     group 'oinstall'
     mode '0755'
@@ -242,16 +255,28 @@ Directories
   end
 <% end %>
 
-!SLIDE slide x=4800 y=2000
+!SLIDE slide x=4800 y=2000 
+
+Cron
+
+<% code do %>
+cron "daily-report" do
+  hour "5"
+  minute "0"
+  command "/usr/local/bin/daily-report"
+end
+<% end %>
+
+!SLIDE slide x=4800 y=2000 z=-5000 scale=2
 
 And so on...
 
-* Install oracle itself
-* Manage basic authentication / passowrds
+* Install Oracle itself
+* Manage basic authentication / passwords
 * Create databases
 * Setup backups
 
-!SLIDE slide x=6000 y=2000
+!SLIDE slide x=6000 y=2000 z=-5000 scale=2
 
 Community Cookbooks, too
 

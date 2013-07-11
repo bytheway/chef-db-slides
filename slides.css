@@ -41,6 +41,13 @@ body {
   #background-color: white;
 }
 
+.chef.hidden {
+  opacity: 0;
+}
+
+.chef.hidden.step:not(.active) {
+      opacity: 0;
+}
 
 .chef.step {
   width: 900px;
