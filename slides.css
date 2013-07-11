@@ -1,0 +1,66 @@
+/* add your css style rules here */
+
+
+body {
+  background-image: -webkit-linear-gradient(top, #003399, #000099);
+  background-image:    -moz-linear-gradient(top, #003399, #000099);
+  background-image:     -ms-linear-gradient(top, #003399, #000099);
+  background-image:      -o-linear-gradient(top, #003399, #000099);
+  background-image:         linear-gradient(top, #003399, #000099);
+
+  font-family: 'Monda', sans-serif;
+}
+
+.slide {
+  min-width: 1000px;
+  min-height: 600px;
+  padding: 40px 60px;
+
+  font-size: 48px;
+  text-align: center;
+
+  opacity: 0.3;
+  background-color: white;
+}
+
+.slide-center {
+  display: table-cell;
+  min-width: 1000px;
+  min-height: 600px;
+  padding: 40px 60px;
+
+  font-size: 48px;
+  text-align: center;
+
+  opacity: 0.3;
+  background-color: white;
+}
+
+.step {
+  width: 900px;
+  height: 420px;
+  display: block;
+  transition: opacity 1s;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step:not(.active) {
+      opacity: 0;
+}
+
+ul {
+  text-align: left;
+  font-size: 38px;
+  line-height: 70px;
+}
+
+pre, code {
+  font-size: 32px;
+  line-height: 38px;
+  margin-left: 30px;
+  text-align: left;
+}
+
