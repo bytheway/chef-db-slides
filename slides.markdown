@@ -10,6 +10,52 @@ body {
   font-family: 'Monda', sans-serif;
 }
 
+
+.step {
+  width: 900px;
+  height: 420px;
+  display: block;
+  transition: opacity 1s;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step:not(.active) {
+      opacity: 0;
+}
+
+
+.chef {
+  min-width: 400px;
+  min-height: 400px;
+  padding: 40px 60px;
+
+  font-size: 48px;
+  text-align: center;
+
+  color: white;
+  opacity: 0.3;
+  #background-color: white;
+}
+
+
+.chef.step {
+  width: 900px;
+  height: 420px;
+  display: block;
+  transition: opacity 1s;
+}
+
+.chef.step.active {
+  opacity: 1;
+}
+
+.chef.step:not(.active) {
+      opacity: 0.5;
+}
+
 .slide {
   min-width: 1000px;
   min-height: 600px;
@@ -34,22 +80,6 @@ body {
   opacity: 0.3;
   background-color: white;
 }
-
-.step {
-  width: 900px;
-  height: 420px;
-  display: block;
-  transition: opacity 1s;
-}
-
-.step.active {
-  opacity: 1;
-}
-
-.step:not(.active) {
-      opacity: 0;
-}
-
 ul {
   text-align: left;
   font-size: 38px;
@@ -98,6 +128,31 @@ CREATE OR REPLACE PROCEDURE MyProcedure
 ...
 <% end %>
 
+!SLIDE chef x=0 y=-1000
+
+![](images/uparrow.png)
+
+Resources
+
+!SLIDE chef x=0 y=-1300
+
+![](images/uparrow.png)
+
+Recipes
+
+!SLIDE chef x=0 y=-1600
+
+![](images/uparrow.png)
+
+Cookbooks
+
+!SLIDE chef x=0 y=-1762
+
+Roles
+
+!SLIDE chef x=300 y=-1762
+
+Nodes
 
 !SLIDE slide x=1200 y=1000
 
@@ -107,12 +162,12 @@ Recipes
 * Declarative.
 * Tell **what** you want, not **how**
 
-~~~
-  directory '/opt/oracle' do
-    owner 'oracle'
-    mode '0755'
-  end
-~~~
+<% code do %>
+directory '/opt/oracle' do
+  owner 'oracle'
+  mode '0755'
+end
+<% end %>
 
 !SLIDE slide x=2400 y=1000
 
